@@ -10,8 +10,8 @@ function getEffects(effectList:string[]):string {
     return effectList.map(effect => effects[effect]).join('');
 }
 export function color(text:string, options:IColor):string {
-    const preparedText = text.replace(/ё/g, 'е');
-    let result = '';
+    const preparedText:string = text.replace(/ё/g, 'е');
+    let result:string = '';
     if (options) {
         if (options.font) {
             result = addColor(result, options.font);
