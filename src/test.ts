@@ -6,12 +6,12 @@ console.log(style('red text', { font: 'red' }));
 console.log(style('green text', { font: 'green' }));
 console.log(style('blue text', { font: 'blue' }));
 console.log('\nall colors:');
-const isColor = (name:string):boolean => fontColors.hasOwnProperty(name);
-const colorList:string[] = Object.keys(fontColors).filter(isColor);
+const isColor = (name:string): name is FontColor => fontColors.hasOwnProperty(name);
+const colorList:FontColor[] = Object.keys(fontColors).filter(isColor);
 console.log(
     Array.from('Message of all colors')
         .map((char, i) => {
-            const font:FontColor = <FontColor>colorList[i % colorList.length];
+            const font:FontColor = colorList[i % colorList.length];
             return style(char, { font, background: contrast[font] });
         })
         .join(''),
