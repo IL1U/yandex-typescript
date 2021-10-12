@@ -1,7 +1,7 @@
 import { color } from './colors';
-import { IColor } from './model';
+import { Color } from './model';
 
-export function markdown(text:string, options:IColor) {
+export function markdown(text:string, options:Color) {
     let result = text;
     if (options) {
         if (options.bold) {

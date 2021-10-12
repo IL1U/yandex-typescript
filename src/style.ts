@@ -1,8 +1,8 @@
 import { color } from './colors';
 import { markdown } from './md';
-import { IColor } from './model';
+import { Color } from './model';
 
-export function style(text:string, options:IColor):string {
+export function style(text:string, options:Color):string {
     if (text.length === 0) {
         return text;
     }
